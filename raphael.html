@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🔥 Raphael - The Savage Chatbot 🔥</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #121212;
+            color: white;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            margin-top: 50px;
+            background: #222;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+            width: 90%;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        h1 {
+            color: #ff4747;
+        }
+        button {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 15px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            color: white;
+            background-color: #ff4747;
+            transition: 0.3s;
+        }
+        button:hover {
+            background-color: #c40000;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>🔥 Raphael - The Savage Chatbot 🔥</h1>
+    <p>I can calculate love, predict your fortune, tell your future job, or roast you! 🤖🔥</p>
+    <button onclick="loveCalculator()">❤️ Love Calculator</button>
+    <button onclick="fortuneTeller()">🔮 Fortune Teller</button>
+    <button onclick="futureJobPredictor()">💼 Future Job Predictor</button>
+    <button onclick="roastGenerator()">🔥 AI Roast Generator</button>
+    
+    <div id="output"></div>
+</div>
+
+<script>
+    function loveCalculator() {
+        let partner = prompt("Partner's name:");
+        let yourName = prompt("Your name:");
+
+        if (!partner || !yourName) {
+            alert("You must enter both names!");
+            return;
+        }
+
+        let lovePercent = Math.floor(Math.random() * 100) + 1;
+        let result = lovePercent < 50 ? "Aukaat he kya teri? 🤡" : "Nice Pair! ❤️🔥";
+
+        document.getElementById("output").innerHTML = `<p>❤️ ${yourName} + ${partner} = ${lovePercent}% Love 💕</p><p>${result}</p>`;
+    }
+
+    function fortuneTeller() {
+        let name = prompt("Enter your name:");
+        if (!name) {
+            alert("Enter your name!");
+            return;
+        }
+
+        let fortunes = [
+            "🔮 I see a pizza in your future... and it’s Hawaiian. I’m so sorry.",
+            "💖 The stars say you’ll find true love... right after you stop swiping left on everyone.",
+            "😴 I foresee a nap in your near future. The universe demands it.",
+            "📱 You will soon receive a text from someone you miss... it’s your mom asking if you’ve eaten yet.",
+            "🎟️ The crystal ball shows you winning the lottery... but then losing the ticket. Better luck next time!",
+            "🚀 The cards say you’ll die peacefully in your sleep... unlike your passengers.",
+            "🚗 The cards say you’ll die surrounded by loved ones... because you never learned to drive properly.",
+            "⏳ You will achieve your dreams... just in time for the heat death of the universe.",
+            "🤦 I foresee a long life... but it’ll feel even longer because of your poor life choices."
+        ];
+
+        let fortune = fortunes[Math.floor(Math.random() * fortunes.length)];
+        document.getElementById("output").innerHTML = `<p>🔮 ${name}, your fortune: <br>➡ ${fortune}</p>`;
+    }
+
+    function futureJobPredictor() {
+        let name = prompt("Enter your name:");
+        if (!name) {
+            alert("Enter your name!");
+            return;
+        }
+
+        let jobs = [
+            "Billionaire 💰", "CEO of Tesla 2.0 🚀", "Hollywood Actor 🎬", "AI Scientist 🤖",
+            "Crypto Millionaire 📈", "Astronaut 🛰️", "President of a Country 🇺🇸",
+            "Secret Agent 🕵️‍♂️", "Professional Gamer 🎮", "Software Engineer 💻",
+            "Teacher 🍎", "Chef 🍳", "Food Delivery Guy 🍔", "Call Center Employee ☎️",
+            "Mechanic 🔧", "Bartender 🍸", "Uber Driver 🚗", "Mall Security Guard 👮",
+            "Garbage Collector 🚮", "Street Sweeper 🧹", "Beggar at Traffic Signal 🤲", 
+            "Slum King 🏚️", "Slut 🚬💋", "Call Girl/Boy 📞🔥", "Rickshaw Puller 🚲",
+            "Fake Guru 🙏 (Scamming people!)", "Bathroom Cleaner 🚽", "Toilet Paper Inspector 🧻", 
+            "Struggling YouTuber 🎥 (0 subscribers!)", "Human Statue 🗿 (Standing in malls for tips)", 
+            "TikTok Dancer 💃 (But no views!)"
+        ];
+
+        let futureJob = jobs[Math.floor(Math.random() * jobs.length)];
+        let success = Math.floor(Math.random() * 100) + 1;
+        let message = success < 20 ? "😂 Your life is gonna be rough, bro!" :
+                      success < 50 ? "💪 Work harder if you want to improve!" :
+                      success < 80 ? "🚀 Decent future ahead, keep pushing!" :
+                                    "🔥 You're gonna be a legend in your field!";
+
+        document.getElementById("output").innerHTML = `<p>💼 ${name}, your future career: <strong>${futureJob}</strong></p><p>🔥 Success Rate: ${success}%</p><p>${message}</p>`;
+    }
+
+    function roastGenerator() {
+        let name = prompt("Enter your name, victim:");
+
+        if (!name) {
+            alert("Enter a name!");
+            return;
+        }
+
+        let roasts = [
+            "You're like a cloud. When you disappear, it's a beautiful day!",
+            "You bring everyone so much joy… when you leave the room.",
+            "You're proof that even evolution takes breaks.",
+            "I'd agree with you, but then we’d both be wrong.",
+            "You're like a penny—two-faced and not worth much.",
+            "You're not stupid; you just have bad luck thinking.",
+            "Your voice could make a happy meal depressed.",
+            "You're like a bad Wi-Fi connection—annoying, unreliable, and slowing everyone down.",
+            "You're like a Windows update—nobody wants it, but we’re forced to deal with it.",
+            "If I had a dollar for every smart thing you said, I’d be broke."
+        ];
+
+        let roast = roasts[Math.floor(Math.random() * roasts.length)];
+        document.getElementById("output").innerHTML = `<p>🔥 ${name}, ${roast} 🔥</p>`;
+    }
+</script>
+
+</body>
+</html>
